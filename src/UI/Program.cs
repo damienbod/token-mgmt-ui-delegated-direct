@@ -33,10 +33,10 @@ builder.Services.AddAuthentication(options =>
     options.GetClaimsFromUserInfoEndpoint = true;
 });
 
+var profileApiBaseUrl = builder.Configuration["AuthConfigurations:ProtectedApiUrl"];
+
 builder.Services.AddOpenIdConnectAccessTokenManagement();
 
-var profileApiBaseUrl = builder.Configuration["AuthConfigurations:ProtectedApiUrl"];
-// registers HTTP client that uses the managed client access token
 builder.Services.AddUserAccessTokenHttpClient("profileClient",
     configureClient: client => { client.BaseAddress = new Uri(profileApiBaseUrl!); });
 
@@ -49,8 +49,7 @@ builder.Services.AddAuthorizationBuilder()
 
 builder.Services.AddScoped<PhotoService>();
 builder.Services.AddHttpClient();
-builder.Services.Configure<AuthConfigurations>(
-    builder.Configuration.GetSection("AuthConfigurations"));
+builder.Services.Configure<AuthConfigurations>(builder.Configuration.GetSection("AuthConfigurations"));
 
 builder.Services.AddRazorPages();
 

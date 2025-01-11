@@ -27,12 +27,12 @@ public class Worker : IHostedService
             var manager = provider.GetRequiredService<IOpenIddictApplicationManager>();
 
             // API delegated with introspection or CC
-            if (await manager.FindByClientIdAsync("rs_dataEventRecordsApi") == null)
+            if (await manager.FindByClientIdAsync("rs_myscopeApi") == null)
             {
                 var descriptor = new OpenIddictApplicationDescriptor
                 {
-                    ClientId = "rs_dataEventRecordsApi",
-                    ClientSecret = "dataEventRecordsSecret",
+                    ClientId = "rs_myscopeApi",
+                    ClientSecret = "myscopeSecret",
                     Permissions =
                     {
                         Permissions.Endpoints.Introspection,
@@ -55,7 +55,7 @@ public class Worker : IHostedService
                         Permissions.Endpoints.Authorization,
                         Permissions.Endpoints.Token,
                         Permissions.GrantTypes.ClientCredentials,
-                        Permissions.Prefixes.Scope + "dataEventRecords"
+                        Permissions.Prefixes.Scope + "myscope"
                     }
                 });
             }
@@ -70,17 +70,15 @@ public class Worker : IHostedService
                     DisplayName = "OIDC confidential Code Flow PKCE",
                     DisplayNames =
                     {
-                        [CultureInfo.GetCultureInfo("fr-FR")] = "Application cliente MVC"
+                        [CultureInfo.GetCultureInfo("fr-FR")] = "Application cliente Razor Pages"
                     },
                     PostLogoutRedirectUris =
                     {
-                        new Uri("https://localhost:44360/signout-callback-oidc"),
-                        new Uri("https://localhost:5001/signout-callback-oidc")
+                        new Uri("https://localhost:5014/signout-callback-oidc")
                     },
                     RedirectUris =
                     {
-                        new Uri("https://localhost:44360/signin-oidc"),
-                        new Uri("https://localhost:5001/signin-oidc")
+                        new Uri("https://localhost:5014/signin-oidc")
                     },
                     ClientSecret = "oidc-pkce-confidential_secret",
                     Permissions =
@@ -95,7 +93,7 @@ public class Worker : IHostedService
                         Permissions.Scopes.Email,
                         Permissions.Scopes.Profile,
                         Permissions.Scopes.Roles,
-                        Permissions.Prefixes.Scope + "dataEventRecords"
+                        Permissions.Prefixes.Scope + "myscope"
                     },
                     Requirements =
                     {
@@ -109,19 +107,19 @@ public class Worker : IHostedService
         {
             var manager = provider.GetRequiredService<IOpenIddictScopeManager>();
 
-            if (await manager.FindByNameAsync("dataEventRecords") is null)
+            if (await manager.FindByNameAsync("myscope") is null)
             {
                 await manager.CreateAsync(new OpenIddictScopeDescriptor
                 {
-                    DisplayName = "dataEventRecords API access",
+                    DisplayName = "myscope API access",
                     DisplayNames =
                     {
                         [CultureInfo.GetCultureInfo("fr-FR")] = "Accès à l'API de démo"
                     },
-                    Name = "dataEventRecords",
+                    Name = "myscope",
                     Resources =
                     {
-                        "rs_dataEventRecordsApi"
+                        "rs_myscope"
                     }
                 });
             }
