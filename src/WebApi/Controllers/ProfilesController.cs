@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApi.Controllers;
 
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+[ApiController]
 [Route("api/[controller]")]
 public class ProfilesController : Controller
 {
