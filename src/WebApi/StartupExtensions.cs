@@ -16,7 +16,7 @@ internal static class StartupExtensions
         .AddJwtBearer("bearer", options =>
         {
             options.Authority = "https://localhost:5016/";
-            options.Audience = "myscope";
+            options.Audience = "rs_myscope";
         });
 
         var requireAuthPolicy = new AuthorizationPolicyBuilder()
