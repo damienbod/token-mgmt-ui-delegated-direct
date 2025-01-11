@@ -39,11 +39,11 @@ builder.Services.AddSecurityHeaderPolicies()
 builder.Services.AddControllers();
 
 builder.Services.AddAuthentication()
-            .AddJwtBearer("bearer", options =>
-            {
-                options.Authority = "https://localhost:5016/";
-                options.Audience = "rs_myscope";
-            });
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+    {
+        options.Authority = "https://localhost:5016/";
+        options.Audience = "rs_myscope";
+    });
 
 builder.Services.AddOpenApi(options =>
 {

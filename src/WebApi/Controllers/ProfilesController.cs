@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
-[Authorize(AuthenticationSchemes = "bearer")]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [Route("api/[controller]")]
 public class ProfilesController : Controller
 {
+    [EndpointSummary("This is a summary from OpenApi attributes.")]
+    [EndpointDescription("This is a description from OpenApi attributes.")]
+    [Produces(typeof(string))]
     [HttpGet("photo")]
     public string GetPhoto()
     {
