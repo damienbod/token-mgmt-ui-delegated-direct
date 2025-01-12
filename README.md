@@ -10,6 +10,8 @@
 
 https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/additional-claims
 
+https://github.com/dotnet/aspnetcore/issues/8175
+
 ## Standards
 
 [JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519)
