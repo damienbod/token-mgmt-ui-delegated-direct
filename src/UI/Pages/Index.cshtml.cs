@@ -22,11 +22,12 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        // token expires after 1hr, would need to replace this with token managment
-        var accessToken = await HttpContext.GetUserAccessTokenAsync(new UserTokenRequestParameters
-        {
-            Scope = "myscope"
-        });
+        // token expires, token managment required
+        var accessToken = await HttpContext.GetUserAccessTokenAsync(
+            new UserTokenRequestParameters
+            {
+                Scope = "myscope"
+            });
 
         var photo = await _photoService.GetPhotoAsync(accessToken.AccessToken!);
         if (!string.IsNullOrEmpty(photo))

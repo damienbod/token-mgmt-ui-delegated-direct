@@ -38,7 +38,10 @@ var profileApiBaseUrl = builder.Configuration["AuthConfigurations:ProtectedApiUr
 builder.Services.AddOpenIdConnectAccessTokenManagement();
 
 builder.Services.AddUserAccessTokenHttpClient("profileClient",
-    configureClient: client => { client.BaseAddress = new Uri(profileApiBaseUrl!); });
+    configureClient: client => 
+    { 
+        client.BaseAddress = new Uri(profileApiBaseUrl!); 
+    });
 
 var requireAuthPolicy = new AuthorizationPolicyBuilder()
     .RequireAuthenticatedUser()

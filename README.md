@@ -8,6 +8,7 @@
 
 [Duende token management](https://docs.duendesoftware.com/identityserver/v7/quickstarts/3a_token_management/)
 
+https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/additional-claims
 
 ## Standards
 
