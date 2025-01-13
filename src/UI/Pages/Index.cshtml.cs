@@ -22,14 +22,17 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        // token expires, token managment required
-        var accessToken = await HttpContext.GetUserAccessTokenAsync(
-            new UserTokenRequestParameters
-            {
-                Scope = "myscope"
-            });
+        var photo = await _photoService.GetPhotoAsync();
 
-        var photo = await _photoService.GetPhotoAsync(accessToken.AccessToken!);
+        // OR
+        //var accessToken = await HttpContext.GetUserAccessTokenAsync(
+        //    new UserTokenRequestParameters
+        //    {
+        //        Scope = "myscope"
+        //    });
+
+        //var photo = await _photoService.GetPhotoAsync(accessToken.AccessToken!);
+
         if (!string.IsNullOrEmpty(photo))
         {
             Photo = Base64UrlEncoder.DecodeBytes(photo);
