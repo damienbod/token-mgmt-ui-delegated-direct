@@ -1,6 +1,6 @@
 # ASP.NET Core Access Token Management
 
-![ASP.NET Core Access Token Management](https://github.com/damienbod/AspNetCoreAccessTokenManagement/blob/main/images/context.png)
+![ASP.NET Core Access Token Management](https://github.com/damienbod/token-mgmt-ui-delegated-direct/blob/main/images/context.png)
 
 ## Links
 
