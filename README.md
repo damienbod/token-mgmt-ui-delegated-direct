@@ -4,6 +4,10 @@
 
 ![ASP.NET Core Access Token Management](https://github.com/damienbod/token-mgmt-ui-delegated-direct/blob/main/images/context.png)
 
+## Blogs in this series
+
+- [ASP.NET Core user delegated access token management](https://damienbod.com/2025/01/15/asp-net-core-user-delegated-access-token-management/)
+
 ## Links
 
 [Duende.AccessTokenManagement.OpenIdConnect](https://www.nuget.org/packages/Duende.AccessTokenManagement.OpenIdConnect) 
