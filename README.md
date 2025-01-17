@@ -1,5 +1,7 @@
 # ASP.NET Core Access Token Management
 
+[![.NET](https://github.com/damienbod/token-mgmt-ui-delegated-direct/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damienbod/token-mgmt-ui-delegated-direct/actions/workflows/dotnet.yml)
+
 ![ASP.NET Core Access Token Management](https://github.com/damienbod/token-mgmt-ui-delegated-direct/blob/main/images/context.png)
 
 ## Links
