@@ -2,6 +2,10 @@
 
 [![.NET](https://github.com/damienbod/token-mgmt-ui-delegated-direct/actions/workflows/dotnet.yml/badge.svg)](https://github.com/damienbod/token-mgmt-ui-delegated-direct/actions/workflows/dotnet.yml)
 
+## Setup
+
+The solution uses a secure downstream API and requires user delegated access tokens for access. The UI application is implemented using ASP.NET Core and razor pages. The UI application authenticates against an OpenID Connect server implemented using OpenIddict. The application client is implemented using an OpenID Connect confidential client and the OpenID Connect code flow with PKCE. This flow returns an access token which is used for the downstream API.
+
 ![ASP.NET Core Access Token Management](https://github.com/damienbod/token-mgmt-ui-delegated-direct/blob/main/images/context.png)
 
 ## Blogs in this series
