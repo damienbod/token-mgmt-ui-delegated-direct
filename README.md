@@ -15,6 +15,9 @@ The solution uses a secure downstream API and requires user delegated access tok
 - [ASP.NET Core delegated OAuth Token Exchange access token management](https://damienbod.com/2025/02/10/asp-net-core-delegated-oauth-token-exchange-access-token-management/)
 - [ASP.NET Core delegated Microsoft OBO access token management (Entra only)](https://damienbod.com/2025/03/25/asp-net-core-delegated-microsoft-obo-access-token-management-entra-only/)
 
+## History
+
+- 2025-08-01 Updated packages
 
 ## Links
 
