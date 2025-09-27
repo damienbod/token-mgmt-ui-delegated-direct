@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using NetEscapades.AspNetCore.SecurityHeaders.Infrastructure;
+using Duende.AccessTokenManagement.OpenIdConnect;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthentication(options =>
