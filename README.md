@@ -17,6 +17,7 @@ The solution uses a secure downstream API and requires user delegated access tok
 
 ## History
 
+- 2025-12-01 .NET 10
 - 2025-09-27 Updated packages
 - 2025-08-01 Updated packages
 
