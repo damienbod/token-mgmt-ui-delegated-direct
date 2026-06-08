@@ -1,5 +1,5 @@
-﻿using IdentityModel.Client;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
+using System.Net.Http.Headers;
 
 namespace Ui;
 
@@ -24,7 +24,7 @@ public class PhotoService
         {
             var client = _clientFactory.CreateClient(); 
             client.BaseAddress = new Uri(_authConfigurations.Value.ProtectedApiUrl);
-            client.SetBearerToken(accessToken);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
             var response = await client.GetAsync("api/Profiles/photo");
             if (response.IsSuccessStatusCode)
