@@ -17,6 +17,7 @@ The solution uses a secure downstream API and requires user delegated access tok
 
 ## History
 
+- 2026-10-09 Updated packages
 - 2026-07-30 Updated packages
 - 2026-06-08 Updated packages
 - 2026-05-18 Updated packages
